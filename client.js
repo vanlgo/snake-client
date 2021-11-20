@@ -1,7 +1,7 @@
 const net = require("net");
 
 // establishes a connection with the game server
-const connect = function (data) {
+const connect = function () {
   const conn = net.createConnection({
     host: 'localhost',
     port: 50541,
@@ -10,16 +10,12 @@ const connect = function (data) {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
-  conn.on("event name", functionThatDoesSomething);
 
   conn.on('data', (data) => {
-    console.log('Message from client: ', data);
-  });
+    console.log('Serversays: ', data);
+  });  
 
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
-
-module.exports = {connect}
+module.exports = {connect};
