@@ -15,6 +15,21 @@ const connect = function () {
 
   conn.on('connect', () => {
     conn.write('Name: MLK');
+    // setTimeout (() => {
+    //   conn.write('Move: down');
+    // }, 50)
+    // setTimeout (() => {
+    //   conn.write('Move: left');
+    // }, 150)
+    // setTimeout (() => {
+    //   conn.write('Move: down');
+    // }, 200)
+    // setTimeout (() => {
+    //   conn.write('Move: right');
+    // }, 250)
+    // setInterval (() => {
+    //   conn.write('Move: down');
+    // }, 50)
   });
 
   return conn;
