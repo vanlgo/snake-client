@@ -18,7 +18,13 @@ const setupInput = (conn) => {
       conn.write("Move: down");
     } else if (input === "d") {
       conn.write("Move: right");
-    } 
+    } else if (input === "x") {
+      conn.write("Say: Say it ain't soo-O-oo-O--");
+    } else if (input === "c") {
+      conn.write("Say: That gurrl...");
+    } else if (input === "v") {
+      conn.write("Say: ...is a hartbreakurrr");
+    }
   };
 
   stdin.on("data", handleUserInput);
