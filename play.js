@@ -1,5 +1,6 @@
 const net = require("net");
-const {connect} = require("./client");
+const connect = require("./client");
+const setupInput = require("./input");
 
 // const connect = function () {
 //   const conn = net.createConnection({
@@ -21,22 +22,21 @@ connect();
 
 // setup interface to handle user input from stdin
 
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
+// const setupInput = function () {
+//   const stdin = process.stdin;
+//   stdin.setRawMode(true);
+//   stdin.setEncoding("utf8");
+//   stdin.resume();
 
-  stdin.on('data', handleUserInput);
+//   const handleUserInput = function (input) {
+//     if (input === '\u0003') {
+//       process.exit();
+//     }
+//   };
 
+//   stdin.on('data', handleUserInput);
 
-  return stdin;
-};
-
-const handleUserInput = function (input) {
-  if (input === '\u0003') {
-    process.exit();
-  }
-};
+//   return stdin;
+// };
 
 setupInput();
